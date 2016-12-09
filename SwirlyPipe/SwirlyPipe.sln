@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9F558816-F6CC-1C0C-E1EB-07F02553A3B6}") = "SwirlyPipe", "Assembly-CSharp.csproj", "{0ED723E9-02BC-0D6C-E5BA-3CD3B492407E}"
+EndProject
+Project("{9F558816-F6CC-1C0C-E1EB-07F02553A3B6}") = "SwirlyPipe", "Assembly-CSharp-Editor.csproj", "{1732A6D3-B6FB-9FEF-5297-999BB90F147A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED723E9-02BC-0D6C-E5BA-3CD3B492407E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED723E9-02BC-0D6C-E5BA-3CD3B492407E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED723E9-02BC-0D6C-E5BA-3CD3B492407E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED723E9-02BC-0D6C-E5BA-3CD3B492407E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1732A6D3-B6FB-9FEF-5297-999BB90F147A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1732A6D3-B6FB-9FEF-5297-999BB90F147A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1732A6D3-B6FB-9FEF-5297-999BB90F147A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1732A6D3-B6FB-9FEF-5297-999BB90F147A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

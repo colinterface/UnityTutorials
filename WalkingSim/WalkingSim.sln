@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{E2E7BF84-A85B-27F4-5B32-ED4EE540A406}") = "WalkingSim", "Assembly-CSharp.csproj", "{FAB70C8B-02A1-4968-AE2E-B03D62F6CBAF}"
 EndProject
+Project("{E2E7BF84-A85B-27F4-5B32-ED4EE540A406}") = "WalkingSim", "Assembly-CSharp-Editor.csproj", "{3B4BED6C-FD62-5461-63CE-9D7FF1264A0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{FAB70C8B-02A1-4968-AE2E-B03D62F6CBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB70C8B-02A1-4968-AE2E-B03D62F6CBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB70C8B-02A1-4968-AE2E-B03D62F6CBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4BED6C-FD62-5461-63CE-9D7FF1264A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4BED6C-FD62-5461-63CE-9D7FF1264A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4BED6C-FD62-5461-63CE-9D7FF1264A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4BED6C-FD62-5461-63CE-9D7FF1264A0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
