@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO.Ports;
+
 
 public class Fractal : MonoBehaviour {
 
@@ -10,6 +12,8 @@ public class Fractal : MonoBehaviour {
 	public float spawnProbability;
 	public float maxRotationSpeed;
 	public float minRotationSpeed;
+
+	SerialPort stream = new SerialPort("/dev/tty.usbmodem1411", 9600, Parity.None, 8, StopBits.One);
 
 	private int depth;
 
@@ -35,6 +39,9 @@ public class Fractal : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		stream.ReadTimeout = 1;
+		stream.Open();
+
 		if (materials == null) {
 			InitializeMaterials ();
 		}
@@ -84,7 +91,17 @@ public class Fractal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 //		transform.Rotate (0f, (rotationSpeed * depth + 10) * Time.deltaTime, 0f);
-		transform.Rotate (0f, 10f * Time.deltaTime, 0f);
+//		transform.Rotate (0f, 10f * Time.deltaTime, 0f);
+
+		try {
+			print(stream.ReadLine());
+		}
+		catch(System.Exception) {
+
+		}
+				
+		float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+		transform.Rotate (0f, rotation, 0f);
 
 	
 	}

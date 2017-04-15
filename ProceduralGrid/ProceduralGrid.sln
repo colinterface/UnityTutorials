@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{BEEECBD3-40F4-8195-4FB6-8EA1A215EF56}") = "ProceduralGrid", "Assembly-CSharp.csproj", "{DBF28C33-6ECD-2BC7-F9D5-58AF7F0E6B5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF28C33-6ECD-2BC7-F9D5-58AF7F0E6B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF28C33-6ECD-2BC7-F9D5-58AF7F0E6B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF28C33-6ECD-2BC7-F9D5-58AF7F0E6B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF28C33-6ECD-2BC7-F9D5-58AF7F0E6B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
