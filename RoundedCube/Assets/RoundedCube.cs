@@ -4,7 +4,12 @@ using System.Collections;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class RoundedCube : MonoBehaviour {
 
-	public int xSize, ySize, zSize, roundness;
+	[Range(2, 100)]
+	public int xSize, ySize, zSize;
+
+	[Range(0, 10)]
+	public int roundness;
+
 	private int xSizeOld, ySizeOld, zSizeOld, roundnessOld;
 
 	private Mesh mesh;
