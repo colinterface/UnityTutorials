@@ -4,8 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class RoundedCube : MonoBehaviour {
 
-	public int xSize, ySize, zSize;
-	public int roundness;
+	public int xSize, ySize, zSize, roundness;
+	private int xSizeOld, ySizeOld, zSizeOld, roundnessOld;
 
 	private Mesh mesh;
 	private Vector3[] vertices;
@@ -18,7 +18,14 @@ public class RoundedCube : MonoBehaviour {
 	}
 
 	private void Update() {
+//		TODO: only regenerate when public variable changes
+		Regenerate();
+	}
+
+	private void Regenerate() {
+		DestroyColliders ();
 		Generate ();
+		CreateColliders ();
 	}
 
 	private void Generate() {
@@ -210,12 +217,51 @@ public class RoundedCube : MonoBehaviour {
 		AddBoxCollider (xSize - roundness * 2, ySize, zSize - roundness * 2);
 		AddBoxCollider (xSize - roundness * 2, ySize - roundness * 2, zSize);
 
+		Vector3 min = Vector3.one * roundness;
+		Vector3 half = new Vector3 (xSize, ySize, zSize) * 0.5f;
+		Vector3 max = new Vector3 (xSize, ySize, zSize) - min;
 
+		AddCapsuleCollider(0, half.x, min.y, min.z);
+		AddCapsuleCollider(0, half.x, min.y, max.z);
+		AddCapsuleCollider(0, half.x, max.y, min.z);
+		AddCapsuleCollider(0, half.x, max.y, max.z);
+
+		AddCapsuleCollider(1, min.x, half.y, min.z);
+		AddCapsuleCollider(1, min.x, half.y, max.z);
+		AddCapsuleCollider(1, max.x, half.y, min.z);
+		AddCapsuleCollider(1, max.x, half.y, max.z);
+
+		AddCapsuleCollider(2, min.x, min.y, half.z);
+		AddCapsuleCollider(2, min.x, max.y, half.z);
+		AddCapsuleCollider(2, max.x, min.y, half.z);
+		AddCapsuleCollider(2, max.x, max.y, half.z);
+	}
+
+	private void DestroyColliders() {
+		BoxCollider[] boxColliders = GetComponents<BoxCollider> ();
+		DestroyEach (boxColliders);
+
+		CapsuleCollider[] capsuleColliders = GetComponents<CapsuleCollider> ();
+		DestroyEach (capsuleColliders);
+	}
+
+	private void DestroyEach(Component[] componentArray) {
+		for (int i = 0; i < componentArray.Length; i++) {
+			Destroy (componentArray [i]);
+		}
 	}
 
 	private void AddBoxCollider(float x, float y, float z) {
 		BoxCollider c = gameObject.AddComponent<BoxCollider> ();
 		c.size = new Vector3 (x, y, z);
+	}
+
+	private void AddCapsuleCollider(int direction, float x, float y, float z) {
+		CapsuleCollider c = gameObject.AddComponent<CapsuleCollider> ();
+		c.center = new Vector3 (x, y, z);
+		c.direction = direction;
+		c.radius = roundness;
+		c.height = c.center [direction] * 2f;
 	}
 
 	private void OnDrawGizmos() {
