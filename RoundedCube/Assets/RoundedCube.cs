@@ -18,14 +18,27 @@ public class RoundedCube : MonoBehaviour {
 	}
 
 	private void Update() {
-//		TODO: only regenerate when public variable changes
-		Regenerate();
+		if (ValuesChanged()) {
+			Regenerate ();
+		}
+		xSizeOld = xSize;
+		ySizeOld = ySize;
+		zSizeOld = zSize;
+		roundnessOld = roundness;
 	}
 
 	private void Regenerate() {
 		DestroyColliders ();
 		Generate ();
 		CreateColliders ();
+	}
+
+	private bool ValuesChanged() {
+		if (xSize != xSizeOld || ySize != ySizeOld || zSize != zSizeOld || roundness != roundnessOld) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private void Generate() {
